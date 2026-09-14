@@ -144,12 +144,12 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     """
     probability = 1
 
-    for person in people:
-       if person in two_genes:
+       for person in people:
+         if person in two_genes:
             genes = 2
-       elif person in one_gene:
+         elif person in one_gene:
             genes = 1
-       else:
+         else:
             genes = 0
 
 
