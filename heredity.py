@@ -277,7 +277,7 @@ def normalize(probabilities):
        gene_total = sum(probabilities[person]["genes"].values())
 
 
-       for gene in probabilities[person]["genes"][gene]:
+       for g in probabilities[person]["genes"][gene]:
            probabilities[person]["genes"][gene] /= gene_total
 
 
