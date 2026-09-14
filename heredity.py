@@ -154,14 +154,14 @@ def joint_probability(people, one_gene, two_genes, have_trait):
              genes = 1
 
 
-        else:  
+        else:
              genes = 0
 
 
         if person in have_trait:
               trait = True
         else:
-             
+
               trait = False
 
 
@@ -170,7 +170,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
         else:
-                 
+
                   mother = people [person]["mother"]
                   father = people [person]["father"]
 
@@ -196,9 +196,9 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
         else:
-                         
+
              father_pass = PROBS["mutation"]
-                         
+
         if genes == 2:
                  gene_probability = (mother_pass*father_pass)
 
@@ -212,7 +212,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
              gene_probability = (1- mother_pass) * (1- father_pass)
 
 
-                             
+
 
 
              trait_probability = PROBS["trait"][genes][trait]
@@ -263,7 +263,7 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
 
              probabilities [person]["gene"][genes] += p
              probabilities [person]["trait"][trait]+= p
-             
+
 
 
 
@@ -277,7 +277,7 @@ def normalize(probabilities):
        gene_total = sum(probabilities[person]["gene"].values())
 
 
-       for gene in probabilities[person]["gene"][gene]:
+       for gene in probabilities[person]["genes"][gene]:
            probabilities[person]["gene"][gene] /= gene_total
 
 
