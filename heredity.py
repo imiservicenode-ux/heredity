@@ -177,27 +177,20 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
         if mother in two_genes:
            mother_pass = 1- PROBS["mutation"]
-
-
         elif mother in one_gene:
              mother_pass = 0.5
-
-
         else:
             mother_pass = PROBS["mutation"]
 
 
         if father in two_genes:
            father_pass = 1- PROBS["mutation"]
-
-
         elif father in one_gene:
              father_pass = 0.5
-
-
         else:
 
              father_pass = PROBS["mutation"]
+
 
         if genes == 2:
                  gene_probability = (mother_pass*father_pass)
