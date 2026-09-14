@@ -274,11 +274,11 @@ def normalize(probabilities):
     is normalized (i.e., sums to 1, with relative proportions the same).
     """
     for person in probabilities:
-       gene_total = sum(probabilities[person]["gene"].values())
+       gene_total = sum(probabilities[person]["genes"].values())
 
 
        for gene in probabilities[person]["genes"][gene]:
-           probabilities[person]["gene"][genes] /= gene_total
+           probabilities[person]["genes"][gene] /= gene_total
 
 
            trait_total = sum (probabilities[person]["trait"].values())
