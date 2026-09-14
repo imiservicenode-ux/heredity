@@ -77,9 +77,14 @@ def main():
         for one_gene in powerset(names):
             for two_genes in powerset(names - one_gene):
 
-                # Update probabilities with new joint probability
-                p = joint_probability(people, one_gene, two_genes, have_trait)
-                update(probabilities, one_gene, two_genes, have_trait, p)
+               def joint_probability(people, one_gene, two_genes, have_trait):
+    # Skip calculations if this setup conflicts with known trait evidence
+    for person in people:
+        if people[person]["trait"] is not None and people[person]["trait"] != (person in have_trait):
+            return 0
+
+    probability = 1
+    # ... rest of your calculation logic ...
 
     # Ensure probabilities sum to 1
     normalize(probabilities)
