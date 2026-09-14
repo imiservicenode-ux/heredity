@@ -182,7 +182,6 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     elif father in one_gene:
          father_pass = 0.5
     else:
-
          father_pass = PROBS["mutation"]
 
 
