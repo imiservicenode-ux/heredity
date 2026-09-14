@@ -77,14 +77,9 @@ def main():
         for one_gene in powerset(names):
             for two_genes in powerset(names - one_gene):
 
-               def joint_probability(people, one_gene, two_genes, have_trait):
-    # Skip calculations if this setup conflicts with known trait evidence
-    for person in people:
-        if people[person]["trait"] is not None and people[person]["trait"] != (person in have_trait):
-            return 0
-
-    probability = 1
-    # ... rest of your calculation logic ...
+                # Update probabilities with new joint probability
+                p = joint_probability(people, one_gene, two_genes, have_trait)
+                update(probabilities, one_gene, two_genes, have_trait, p)
 
     # Ensure probabilities sum to 1
     normalize(probabilities)
@@ -200,7 +195,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         gene_probability = (1- mother_pass) * (1- father_pass)
         trait_probability = PROBS["trait"][genes][trait]
 
-        probability *= gene_probability * trait_probability
+    probability *= gene_probability * trait_probability
 
 
     return probability
