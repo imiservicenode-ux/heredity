@@ -213,7 +213,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
     return probability
 
-def update(probabilities, one_gene, two_genes, have_trait, p):
+def update(probabilities, one_gene, two_genes, have_trait,p):
     """
     Add to `probabilities` a new joint probability `p`.
     Each person should have their "gene" and "trait" distributions updated.
