@@ -153,35 +153,35 @@ def joint_probability(people, one_gene, two_genes, have_trait):
             genes = 0
 
 
-    trait = person in have_trait
+         trait = person in have_trait
 
-    if people[person]["mother"] is None:
-        gene_probability = PROBS["gene"][genes]
-    else:
-        mother = people[person]["mother"]
-        father = people[person]["father"]
+         if people[person]["mother"] is None:
+            gene_probability = PROBS["gene"][genes]
+         else:
+             mother = people[person]["mother"]
+             father = people[person]["father"]
 
-    if mother in two_genes:
-           mother_pass = 1 - PROBS["mutation"]
-    elif mother in one_gene:
-           mother_pass = 0.5
-    else:
-           mother_pass = PROBS["mutation"]
+         if mother in two_genes:
+            mother_pass = 1 - PROBS["mutation"]
+         elif mother in one_gene:
+              mother_pass = 0.5
+         else:
+              mother_pass = PROBS["mutation"]
 
 
-    if father in two_genes:
-       father_pass = 1 - PROBS["mutation"]
-    elif father in one_gene:
-         father_pass = 0.5
-    else:
-         father_pass = PROBS["mutation"]
+         if father in two_genes:
+            father_pass = 1 - PROBS["mutation"]
+         elif father in one_gene:
+             father_pass = 0.5
+         else:
+             father_pass = PROBS["mutation"]
 
-    if genes == 2:
-        gene_probability = mother_pass*father_pass
-    elif genes == 1:
-         gene_probability = (mother_pass *(1- father_pass)) + ((1 - mother_pass) * father_pass)
-    else:
-         gene_probability = (1- mother_pass) * (1- father_pass)
+         if genes == 2:
+            gene_probability = mother_pass*father_pass
+         elif genes == 1:
+              gene_probability = (mother_pass *(1- father_pass)) + ((1 - mother_pass) * father_pass)
+         else:
+              gene_probability = (1- mother_pass) * (1- father_pass)
 
 
     trait_probability = PROBS["trait"][genes][trait]
