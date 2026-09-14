@@ -183,7 +183,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
     if genes == 2:
-       gene_probability =(mother_pass*father_pass)
+       gene_probability = mother_pass*father_pass
     elif genes ==1:
          gene_probability = (mother_pass *(1- father_pass)+ (1 - mother_pass ) * father_pass)
     else:
