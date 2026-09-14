@@ -148,13 +148,10 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     for person in people:
       if person in two_genes:
             genes = 2
-
-
       elif person in one_gene:
            genes = 1
-
     else:
-           genes = 0
+          genes = 0
 
 
     trait = person in have_trait
@@ -188,7 +185,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
          gene_probability = (mother_pass *(1- father_pass)) + ((1 - mother_pass) * father_pass)
     else:
         gene_probability = (1- mother_pass) * (1- father_pass)
-        
+
         trait_probability = PROBS["trait"][genes][trait]
 
     probability *= gene_probability * trait_probability
