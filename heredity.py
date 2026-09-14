@@ -165,8 +165,8 @@ def joint_probability(people, one_gene, two_genes, have_trait):
     if people[person]["mother"] is None:
        gene_probability = PROBS ["gene"][genes]
     else:
-           mother = people [person]["mother"]
-           father = people [person]["father"]
+        mother = people [person]["mother"]
+        father = people [person]["father"]
 
 
     if mother in two_genes:
