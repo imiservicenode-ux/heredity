@@ -212,7 +212,6 @@ def update(probabilities, one_gene, two_genes, have_trait,p):
         else:
              genes = 0
 
-
         if person in have_trait:
              trait = True
         else:
