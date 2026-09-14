@@ -130,7 +130,7 @@ def powerset(s):
 
 
 
-def joint_probability(people, one_gene, two_genes, have_trait, p):
+def joint_probability(people, one_gene, two_genes, have_trait):
     """
     Compute and return a joint probability.
 
@@ -253,7 +253,7 @@ def normalize(probabilities):
            probabilities[person]["genes"][gene] /= gene_total
 
 
-           trait_total = sum (probabilities[person]["trait"].values())
+           trait_total = sum(probabilities[person]["trait"].values())
            for trait in probabilities[person]["trait"]:
                probabilities[person][trait]["trait"] /= trait_total
 
