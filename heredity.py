@@ -207,6 +207,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
              trait_probability = PROBS["trait"][genes][trait]
+             
              probability *= gene_probability * trait_probability
 
 
