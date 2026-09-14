@@ -207,7 +207,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
              trait_probability = PROBS["trait"][genes][trait]
-             
+
              probability *= gene_probability * trait_probability
 
 
@@ -242,10 +242,10 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
              trait = False
 
 
-             #joint probabilities = P distribution
+ #joint probabilities = P distribution
 
-             probabilities [person]["genes"][genes] += p
-             probabilities [person]["trait"][trait] += p
+    probabilities [person]["genes"][genes] += p
+    probabilities [person]["trait"][trait] += p
 
 
 
