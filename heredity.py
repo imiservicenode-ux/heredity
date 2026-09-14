@@ -236,7 +236,7 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
     #Determine gene count for this person
     for person in probabilities:
         if person in two_genes:
-            genes = 1
+            genes = 2
 
 
         elif person in one_gene:
