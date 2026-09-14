@@ -142,7 +142,7 @@ def joint_probability(people, one_gene, two_genes, have_trait):
         * everyone in set `have_trait` has the trait, and
         * everyone not in set` have_trait` does not have the trait.
     """
-    
+
     probability = 1
 
 
@@ -207,8 +207,6 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
              trait_probability = PROBS["trait"][genes][trait]
-
-
              probability *= gene_probability * trait_probability
 
 
@@ -226,10 +224,8 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
         if person in two_genes:
             genes = 2
 
-
         elif person in one_gene:
              genes = 1
-
 
         else:
              genes = 0
@@ -241,18 +237,14 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
         if person in have_trait:
            trait = True
 
-
         else:
              trait = False
 
 
              #joint probabilities = P distribution
 
-
              probabilities [person]["genes"][genes] += p
              probabilities [person]["trait"][trait] += p
-
-
 
 
 
