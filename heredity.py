@@ -231,8 +231,8 @@ def normalize(probabilities):
 
            trait_total = sum(probabilities[person]["trait"].values())
            if trait_total > 0:
-              for trait in probabilities[person]["trait"]:
-                  probabilities[person]["trait"][trait] /= trait_total
+           for trait in probabilities[person]["trait"]:
+           probabilities[person]["trait"][trait] /= trait_total
 
 
 if __name__ == "__main__":
