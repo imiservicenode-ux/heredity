@@ -232,12 +232,8 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
              genes = 0
 
 
-        #Determine the trait expression status
-
-
         if person in have_trait:
-           trait = True
-
+             trait = True
         else:
              trait = False
 
