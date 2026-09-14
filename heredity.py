@@ -225,8 +225,8 @@ def normalize(probabilities):
 
        gene_total = sum(probabilities[person]["gene"].values())
        if gene_total > 0:
-          for gene in probabilities[person]["gene"]:
-           probabilities[person]["gene"][gene] /= gene_total
+           for gene in probabilities[person]["gene"]:
+             probabilities[person]["gene"][gene] /= gene_total
 
 
            trait_total = sum(probabilities[person]["trait"].values())
