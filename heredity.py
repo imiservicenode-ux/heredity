@@ -145,60 +145,57 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
     probability = 1
 
-
     for person in people:
-        if person in two_genes:
-           genes = 2
+      if person in two_genes:
+            genes = 2
 
 
-        elif person in one_gene:
-             genes = 1
+      elif person in one_gene:
+           genes = 1
+
+    else:
+           genes = 0
 
 
-        else:
-             genes = 0
+    if person in have_trait:
+           trait = True
+    else:
+           trait = False
+
+    if people[person]["mother"] is None:
+       gene_probability = PROBS ["gene"][genes]
+    else:
+           mother = people [person]["mother"]
+           father = people [person]["father"]
 
 
-        if person in have_trait:
-              trait = True
-        else:
-
-              trait = False
-
-
-        if people[person]["mother"] is None:
-                  gene_probability = PROBS ["gene"][genes]
-        else:
-                  mother = people [person]["mother"]
-                  father = people [person]["father"]
+    if mother in two_genes:
+       mother_pass = 1- PROBS["mutation"]
+    elif mother in one_gene:
+         mother_pass = 0.5
+    else:
+         mother_pass = PROBS["mutation"]
 
 
-        if mother in two_genes:
-           mother_pass = 1- PROBS["mutation"]
-        elif mother in one_gene:
-             mother_pass = 0.5
-        else:
-            mother_pass = PROBS["mutation"]
+    if father in two_genes:
+       father_pass = 1- PROBS["mutation"]
+    elif father in one_gene:
+         father_pass = 0.5
+    else:
+
+         father_pass = PROBS["mutation"]
 
 
-        if father in two_genes:
-           father_pass = 1- PROBS["mutation"]
-        elif father in one_gene:
-             father_pass = 0.5
-        else:
-
-             father_pass = PROBS["mutation"]
+    if genes == 2:
+       gene_probability = (mother_pass*father_pass)
 
 
-        if genes == 2:
-                 gene_probability = (mother_pass*father_pass)
-
-
-        elif genes ==1:
-             gene_probability = (
-             mother_pass *(1- father_pass)
-             + (1 - mother_pass ) * father_pass
-             )
+    elif genes ==1:
+         gene_probability = (
+         mother_pass *(1- father_pass)
+        + (1 - mother_pass ) * father_pass
+        )
+         
         else:
              gene_probability = (1- mother_pass) * (1- father_pass)
 
@@ -220,8 +217,7 @@ def update(probabilities, one_gene, two_genes, have_trait,p):
     #Determine gene count for this person
     for person in probabilities:
         if person in two_genes:
-            genes = 2
-
+           genes = 2
         elif person in one_gene:
              genes = 1
 
