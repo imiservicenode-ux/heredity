@@ -208,7 +208,7 @@ def update(probabilities, one_gene, two_genes, have_trait, p):
 
         if person in have_trait:
             trait = True
-        else:
+           else:
             trait = False
 
         probabilities[person]["gene"][genes] += p
