@@ -212,9 +212,6 @@ def joint_probability(people, one_gene, two_genes, have_trait):
              gene_probability = (1- mother_pass) * (1- father_pass)
 
 
-
-
-
              trait_probability = PROBS["trait"][genes][trait]
 
 
@@ -222,9 +219,6 @@ def joint_probability(people, one_gene, two_genes, have_trait):
 
 
     return probability
-
-
-
 
 def update(probabilities, one_gene, two_genes, have_trait, p):
     """
