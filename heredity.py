@@ -130,7 +130,7 @@ def powerset(s):
 
 
 
-def joint_probability(people, one_gene, two_genes, have_trait):
+def joint_probability(people, one_gene, two_genes, have_trait, p):
     """
     Compute and return a joint probability.
 
